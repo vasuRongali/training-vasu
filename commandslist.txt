@@ -1,0 +1,27 @@
+ssh -keygen -t rsa -C "key_pair_3"
+ssh-keygen -t rsa -C "key_pair_3"
+cd .ssh
+ls -al
+cd .ssh
+vi authorized_keys 
+sudo service sshd restart
+sudo yum update
+sudo yum install sendmail -y
+sudo systemctl enable sendmail
+sudo systemctl start sendmail
+sudo vi /etc/mail/sendmail.mc
+mkdir /etc/mail/auth
+sudo mkdir /etc/mail/auth
+sudo touch /etc/mail/client-info
+sudo touch /etc/mail/auth/client-info
+vi /etc/mail/auth/client-info
+chmod 600 /etc/mail/auth/client-info
+chmod 700 /etc/mail/auth
+sudo chmod 700 /etc/mail/auth
+sudo chmod 600 /etc/mail/auth/client-info
+sudo vi /etc/mail/auth/client-info
+ makemap -r hash /etc/mail/auth/client-info.db < /etc/mail/auth/client-info
+sudo makemap -r hash /etc/mail/auth/client-info.db < /etc/mail/auth/client-info
+sudo chmod 700 /etc/mail/auth/client-info
+sudo makemap -r hash /etc/mail/auth/client-info.db < /etc/mail/auth/client-info
+sudo su -
